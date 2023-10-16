@@ -10,11 +10,11 @@ import Food from './Food';
 import FoodForm from './FoodForm';
 
 const Main = () => {
+  const { foods, setFoods } = useFood();
+
   useEffect(() => {
     setFoods([...foods, ...data]);
   }, []);
-
-  const { foods, setFoods } = useFood();
 
   // useEffect(() => {
   //   const load = async () => {

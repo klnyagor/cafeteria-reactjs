@@ -12,7 +12,7 @@ const Food = ({ food }) => {
             variant="top"
             src={food.image}
             alt={food.name}
-            className="w-100"
+            className="w-100 rounded-0"
           />
         </Card.Body>
       </Card>

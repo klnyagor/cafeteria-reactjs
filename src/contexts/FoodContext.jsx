@@ -13,6 +13,15 @@ export const FoodContextProvider = ({ children }) => {
     toggleModal();
   };
 
+  const handleCreateFood = (food) => {
+    setFoods([...foods, food]);
+  };
+
+  // const handleCreateFood = async (food) => {
+  //   const newFood = await api.create(food);
+  //   setFoods([... foods, newFood]);
+  // }
+
   return (
     <FoodContext.Provider
       value={{
@@ -22,6 +31,7 @@ export const FoodContextProvider = ({ children }) => {
         show,
         toggleModal,
         handleClick,
+        handleCreateFood,
       }}
     >
       {children}
