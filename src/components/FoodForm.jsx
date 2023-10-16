@@ -1,18 +1,22 @@
 import { Button, Form, Modal } from 'react-bootstrap';
+import { useFood } from '../contexts/FoodContext';
 
-const FoodForm = ({ show, handleClose, handleShow, buttonAdd }) => {
+// const FoodForm = ({ show, handleClose, handleShow, buttonAdd }) => {
+const FoodForm = () => {
+  const { show, toggleModal, handleClick, buttonAdd } = useFood();
+
   return (
     <>
       <Button
         variant="secondary"
         className="rounded-circle mr-4 fw-bold"
-        onClick={handleShow}
+        onClick={handleClick}
         ref={buttonAdd}
       >
         +
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={toggleModal}>
         <Modal.Header closeButton>
           <Modal.Title as="h5">Nova Comida</Modal.Title>
         </Modal.Header>
@@ -37,10 +41,10 @@ const FoodForm = ({ show, handleClose, handleShow, buttonAdd }) => {
             </Form.Group>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button variant="secondary" onClick={toggleModal}>
               Fechar
             </Button>
-            <Button variant="primary" type="submit" onClick={handleClose}>
+            <Button variant="primary" type="submit" onClick={toggleModal}>
               Confirmar
             </Button>
           </Modal.Footer>
