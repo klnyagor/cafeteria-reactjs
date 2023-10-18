@@ -6,7 +6,9 @@ const Header = () => {
     <header>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="/">Cafeteria-reactjs</Navbar.Brand>
+          <Navbar.Brand href="/cafeteria-reactjs">
+            Cafeteria-reactjs
+          </Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
